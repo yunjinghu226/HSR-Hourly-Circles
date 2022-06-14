@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <!--META-->
+    <meta charset='utf-8' />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name='author' content='Yunjing Hu' />
+    <meta name='description' content='Visulization and Statistics of High-Speed Railway Hourly Circles of cities in China'>
+
+    <!--TITLE-->
+    <title>HSR Hourly Circles</title>
+
+    <!--MAPBOX-->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <!--STYLESHEET-->
+    <link href='hsr_webstyle.css' rel='stylesheet' />
+
+  </head>
+
+  <body>
+
+    <!--TITLE-->
+    <div class="titleblock">
+      <h3>高铁等时圈 HSR Hourly Circles</h3>
+      <p>双击任意蓝色点显示该城市等时圈，单机任意等时圈高亮其范围内可达目的地</p>
+      <p>Double click on blue dots to display the hourly circles of a city, click on a hourly circle to highlight the destinations in the range.</p>
+    </div>
+
+    <!--Legend-->
+    <div id="state-legend" class="legend">
+      <h4>Hourly Circles</h4>
+      <div><span style="background-color: #789b82"></span>within 30 min</div>
+      <div><span style="background-color: #a4b899"></span>0.5-1.5 hrs</div>
+      <div><span style="background-color: #cfdaaf"></span>1.5-2.5 hrs</div>
+      <div><span style="background-color: #e7c5b1"></span>2.5-3.5 hrs</div>
+      <div><span style="background-color: #e0afa9"></span>3.5-4.5 hrs</div>
+      <div><span style="background-color: #c17b7b"></span>4.5-5.5 hrs</div>
+      <div><span style="background-color: #cfcece"></span>all time range</div>
+    </div>
+
+    <!--MAP-->
+    <div id='map'></div>
+
+
+    <!--INFO
+    <div class='info'>
+
+      <div class='stat'>
+        <button id='statbutton' class="openbtn" onclick="openStat()"></button>
+        <div id="statPanel" class="sidepanel">
+          <div style="height:3px;width:297px;top:0;background:#A186B8;"></div>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeStat()">&times;</a>
+          <div class='content'>
+            <div class='barchart'><canvas id='total_bar' height=350px></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='cate'>
+        <button id='catebutton' class="openbtn" onclick="openCate()"></button>
+        <div id="catePanel" class="sidepanel">
+          <div style="height:3px;width:297px;top:0;background:#FFBE57;"></div>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeCate()">&times;</a>
+          <div class='content'><div id='cate_info'>click on dots for infomation about the category</div></div>
+        </div>
+      </div>
+
+      <div class='br_info'>
+        <button id='brbutton' class="openbtn" onclick="openBr()"></button>
+        <div id="brPanel" class="sidepanel">
+          <div style="height:3px;width:297px;top:0;background:#438F5E;"></div>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeBr()">&times;</a>
+          <div class='content'>
+            <div id='br_name'>hover over boroughs for more information</div>
+            <div class='barchart'><canvas id='brgh_bar' height=350px></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+    <!--SCRIPT-->
+
+    <script src='hour_circles.js'></script>
+
+
+  </body>
+
+</html>
